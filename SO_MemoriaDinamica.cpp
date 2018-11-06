@@ -112,9 +112,11 @@ void Pcompactacion(vector<process> &A,int mem,int ajuste)
 	M.tamMax=mem;
 	int tem=0;
 	particiones auxP;
+	int cont=0;
 	//mientras que hayan procesos
-	while(!A.empty())
+	while(!A.empty() && cont<100)
 	{
+		cont++;
 		//metiendo los procesos a la memoria
 		for(int i=0;i<A.size();i++)
 		{
@@ -146,16 +148,11 @@ void Pcompactacion(vector<process> &A,int mem,int ajuste)
 						}
 					}/*
 				if(ajuste==1){
-
-
 				}else if(ajuste==2){
-
 				}else if(ajuste==3){
-
 				}else if(ajuste==4)
 				*/
 				/* Ajustes
-
 				*/
 				if(A[i].tama<EspacioLibre(M) && A[i].band==false)
 				{
